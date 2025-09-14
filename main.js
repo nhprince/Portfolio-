@@ -111,15 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         allSections.forEach(section => navObserver.observe(section));
 
-        // --- SMOOTH SCROLL ---
+        // --- SMOOTH SCROLL (DISABLED FOR NATIVE JUMP) ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
+                // e.preventDefault(); // Disabling preventDefault to allow native anchor jump.
+                // const targetId = this.getAttribute('href');
+                // const targetElement = document.querySelector(targetId);
+                // if (targetElement) {
+                //     targetElement.scrollIntoView({ behavior: 'smooth' });
+                // }
             });
         });
 
