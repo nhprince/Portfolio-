@@ -1,0 +1,432 @@
+/*
+================================================
+CYBERPUNK PORTFOLIO - STYLESHEET
+================================================
+*/
+
+/* --- VARIABLES & ROOT --- */
+:root {
+    --color-background: #0a0a0a;
+    --color-primary: #00ffff; /* Cyan */
+    --color-secondary: #ff00ff; /* Magenta */
+    --color-tertiary: #ffff00; /* Yellow */
+    --color-text: #e0e0e0;
+    --color-dark-accent: #1a1a1a;
+
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Share Tech Mono', monospace;
+    --font-body: 'Fira Code', monospace;
+}
+
+/* --- BASE & BODY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-variant-ligatures: none;
+}
+
+.cyber-body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewport="0 0 100 100" style="fill:black;font-size:12px;"><text y="50%">+</text></svg>') 4 4, auto;
+}
+
+/* --- OVERLAYS & BACKGROUND --- */
+#scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.5) 3px,
+        rgba(0, 0, 0, 0.5) 4px
+    );
+    z-index: 9999;
+    pointer-events: none;
+    animation: scanlines 20s linear infinite;
+}
+
+@keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
+
+#glitch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+}
+.bg-shape1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-primary);
+    top: -150px;
+    left: -150px;
+    animation: move-glow 20s infinite alternate ease-in-out;
+}
+.bg-shape2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-secondary);
+    bottom: -100px;
+    right: -100px;
+    animation: move-glow 25s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes move-glow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 100px) scale(1.2); }
+}
+
+/* --- HEADER & NAVIGATION --- */
+.cyber-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+}
+
+.cyber-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-logo a {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-family: var(--font-secondary);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 10vw, 6rem);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
+}
+
+.hero-subtitle {
+    font-family: var(--font-secondary);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    min-height: 2.2rem;
+}
+
+/* --- CYBER BUTTON --- */
+.cyber-button {
+    font-family: var(--font-secondary);
+    display: inline-block;
+    position: relative;
+    padding: 12px 24px;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cyber-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    box-shadow: 0 0 20px var(--color-primary);
+}
+
+/* --- GENERAL CONTENT SECTION --- */
+.content-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* --- ABOUT SECTION --- */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+}
+
+.profile-image-glitch {
+    position: relative;
+    padding: 10px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 4px;
+}
+.profile-image {
+    width: 100%;
+    display: block;
+    filter: grayscale(1) contrast(1.2);
+}
+
+.profile-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.data-card {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    padding: 1.5rem;
+}
+.data-card-title {
+    font-family: var(--font-secondary);
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+.attributes-list {
+    list-style: none;
+    color: var(--color-text);
+}
+.attributes-list li::before {
+    content: '>> ';
+    color: var(--color-secondary);
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--color-dark-accent);
+    border: 1px solid transparent;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--glow-color, var(--color-primary));
+    filter: blur(2px);
+    opacity: 0.7;
+    animation: flicker 4s infinite linear;
+}
+
+.project-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.project-title {
+    font-family: var(--font-primary);
+    color: var(--glow-color, var(--color-primary));
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.project-description {
+    margin-bottom: 1.5rem;
+}
+
+.project-tags .tag {
+    display: inline-block;
+    background: var(--glow-color, var(--color-primary));
+    color: var(--color-background);
+    padding: 0.25rem 0.5rem;
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* --- FOOTER --- */
+.cyber-footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-secondary);
+    margin-top: 4rem;
+}
+.status-ok {
+    color: #00ff00;
+}
+
+/* --- ANIMATIONS --- */
+.glitch-effect {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.glitch-effect[data-text]::before,
+.glitch-effect[data-text]::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-background);
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+.glitch-effect[data-text]:hover::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--color-secondary);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+.glitch-effect[data-text]:hover::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--color-primary);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip: rect(42px, 9999px, 44px, 0); }
+    /* ... add more steps for a complex glitch */
+    100% { clip: rect(2px, 9999px, 98px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(15px, 9999px, 99px, 0); }
+    /* ... add more steps for a complex glitch */
+    100% { clip: rect(50px, 9999px, 20px, 0); }
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 0.7;
+        filter: blur(2px);
+    }
+    20%, 24%, 55% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Simplified for this example, JS will toggle */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(10, 10, 10, 0.95);
+    }
+    .hamburger {
+        display: block; /* Show hamburger */
+    }
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
