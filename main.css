@@ -1,6 +1,6 @@
 /*
 ================================================
-PORTFOLIO REDESIGN - "DYNAMIC TECH NOIR"
+PORTFOLIO REDESIGN - "DYNAMIC TECH NOIR" - V2
 ================================================
 */
 
@@ -63,6 +63,54 @@ img { max-width: 100%; display: block; }
     animation: blink 0.7s infinite;
 }
 #main-content.hidden { display: none; }
+
+/* --- SHARED & TYPOGRAPHY --- */
+.section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 0.5rem auto 0;
+}
+.content-section { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.content-section.visible { opacity: 1; transform: translateY(0); }
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 255, 156, 0.2);
+}
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 156, 0.5);
+}
 
 /* --- HEADER & NAVIGATION --- */
 .site-header {
@@ -134,15 +182,6 @@ img { max-width: 100%; display: block; }
 .hero-title { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 700; min-height: 1.2em; }
 .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--color-secondary); margin-top: 0.5rem; }
 .hero-description { max-width: 650px; margin: 1.5rem auto 2.5rem; color: var(--color-text-secondary); font-size: 1.1rem; }
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-background);
-    box-shadow: 0 0 15px rgba(0, 255, 156, 0.3);
-}
-.btn-primary:hover {
-    background-color: var(--color-primary);
-    box-shadow: 0 0 25px var(--color-primary);
-}
 
 /* --- ABOUT & SKILLS --- */
 .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: center; }
@@ -238,7 +277,8 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 0 10px var(--color-secondary);
 }
 .contact-alternatives { text-align: center; margin-top: 3rem; color: var(--color-text-secondary); }
-.social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+.contact-alternatives p { margin-bottom: 1rem; }
+.social-links { display: flex; justify-content: center; gap: 1.5rem; }
 .social-links a { color: var(--color-secondary); text-decoration: none; font-weight: 600; }
 
 /* --- FOOTER --- */
@@ -246,8 +286,6 @@ img { max-width: 100%; display: block; }
 
 /* --- SHARED ANIMATIONS --- */
 @keyframes blink { 50% { opacity: 0; } }
-.content-section { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.content-section.visible { opacity: 1; transform: translateY(0); }
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
