@@ -16,27 +16,37 @@
 </head>
 <body>
 
+    <div id="loading-screen">
+        <div class="loader-text" id="loader-text"></div>
+    </div>
+
     <header class="site-header">
         <div class="container">
             <nav class="main-nav">
-                <a href="#home" class="nav-logo">NHP</a>
-                <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <a href="#home" class="nav-logo">
+                    <svg class="logo-svg" width="40" height="40" viewBox="0 0 100 100">
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" class="logo-polygon"/>
+                        <text x="50" y="62" text-anchor="middle" class="logo-text-svg">NHP</text>
+                    </svg>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                  <button class="mobile-nav-toggle" aria-controls="nav-menu" aria-expanded="false">
                     <span class="sr-only">Menu</span>
+                    <div class="hamburger-icon"></div>
                 </button>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content" class="hidden">
         <section id="home" class="hero-section">
             <div class="container">
-                <h1 class="hero-title">NH Prince Pradhan</h1>
+                <h1 class="hero-title" id="hero-title"></h1>
                 <p class="hero-subtitle">Elite Bug Hunter & Cyber Security Specialist</p>
                 <p class="hero-description">Securing digital ecosystems through advanced penetration testing and vulnerability analysis.</p>
                 <a href="#contact" class="btn btn-primary">Engage My Services</a>
@@ -52,12 +62,12 @@
                         <div class="skills-grid">
                             <h3 class="subsection-title">Core Competencies</h3>
                             <ul class="skills-list">
-                                <li>Web & Mobile App Penetration Testing</li>
-                                <li>Vulnerability Assessment</li>
-                                <li>Network Security Analysis</li>
-                                <li>CTF Competitions (Top 5% placement)</li>
-                                <li>Secure Code Review</li>
-                                <li>Incident Response</li>
+                                <li style="--i:1;">Web & Mobile App Penetration Testing</li>
+                                <li style="--i:2;">Vulnerability Assessment</li>
+                                <li style="--i:3;">Network Security Analysis</li>
+                                <li style="--i:4;">CTF Competitions (Top 5% placement)</li>
+                                <li style="--i:5;">Secure Code Review</li>
+                                <li style="--i:6;">Incident Response</li>
                             </ul>
                         </div>
                     </div>
@@ -93,33 +103,45 @@
                 <h2 class="section-title">Project Archive</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-card-header">
-                            <h3 class="project-title">Rootkit Analyzer</h3>
-                            <span class="project-tech-stack">Python, Kernel-Mode</span>
-                        </div>
-                        <p class="project-description">Developed an advanced tool to detect and neutralize kernel-level rootkits, resulting in a 40% improvement in stealth threat detection for a test environment.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View on GitHub</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-card-header">
-                            <h3 class="project-title">CTF Payload Generator</h3>
-                            <span class="project-tech-stack">Bash, Automation</span>
-                        </div>
-                        <p class="project-description">Created a script to automate the generation of common CTF payloads, reducing setup time for challenges by an average of 15 minutes.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View on GitHub</a>
+                        <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="https://via.placeholder.com/400x250/161b22/58a6ff?text=Project+1" alt="Project 1 Placeholder">
+                                <h3 class="project-title">Rootkit Analyzer</h3>
+                            </div>
+                            <div class="project-card-back">
+                                <h3 class="project-title">Rootkit Analyzer</h3>
+                                <p class="project-tech-stack">Python, Kernel-Mode</p>
+                                <p class="project-description">Developed a tool to detect kernel-level rootkits, improving threat detection by 40% in tests.</p>
+                                <a href="#" class="project-link">View on GitHub</a>
+                            </div>
                         </div>
                     </div>
                     <div class="project-card">
-                        <div class="project-card-header">
-                            <h3 class="project-title">Network Mapper vX</h3>
-                            <span class="project-tech-stack">Go, Concurrency</span>
+                         <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="https://via.placeholder.com/400x250/161b22/238636?text=Project+2" alt="Project 2 Placeholder">
+                                <h3 class="project-title">CTF Payload Generator</h3>
+                            </div>
+                            <div class="project-card-back">
+                                <h3 class="project-title">CTF Payload Generator</h3>
+                                <p class="project-tech-stack">Bash, Automation</p>
+                                <p class="project-description">Automated common CTF payload generation, reducing challenge setup time significantly.</p>
+                                <a href="#" class="project-link">View on GitHub</a>
+                            </div>
                         </div>
-                        <p class="project-description">A high-performance network scanner built with Go for rapid reconnaissance. Capable of scanning a /24 subnet in under 5 seconds.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                         <div class="project-card-inner">
+                            <div class="project-card-front">
+                                <img src="https://via.placeholder.com/400x250/161b22/f0f6fc?text=Project+3" alt="Project 3 Placeholder">
+                                <h3 class="project-title">Network Mapper vX</h3>
+                            </div>
+                            <div class="project-card-back">
+                                <h3 class="project-title">Network Mapper vX</h3>
+                                <p class="project-tech-stack">Go, Concurrency</p>
+                                <p class="project-description">High-speed network scanner for rapid reconnaissance. Scans a /24 subnet in under 5 seconds.</p>
+                                <a href="#" class="project-link">View on GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>
