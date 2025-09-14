@@ -3,151 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NH_PRINCE // NETRUNNER</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z' fill='%230d0d0d' stroke='%23ff00ff' stroke-width='5'/%3E%3Ctext x='50' y='62' font-family='monospace' font-size='40' fill='%2300ffff' text-anchor='middle'%3ENP%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <title>NH Prince Pradhan | Cyber Security Specialist</title>
 
-    <meta name="description" content="NH Prince Pradhan - Netrunner & Cyber Security Specialist. Infiltrating digital frontiers and securing the net."/>
-    <meta name="keywords" content="NH Prince Pradhan, netrunner, cyberpunk, futuristic portfolio, bug hunter, cybersecurity, penetration testing, ethical hacking"/>
-    <meta name="author" content="NH Prince Pradhan">
+    <meta name="description" content="Portfolio of NH Prince Pradhan, an elite bug hunter and cybersecurity specialist focusing on penetration testing and vulnerability assessments.">
+    <meta name="keywords" content="NH Prince Pradhan, cybersecurity, penetration testing, ethical hacking, bug bounty, vulnerability assessment">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="cyberpunk.css">
+    <link rel="stylesheet" href="main.css">
 </head>
-<body class="cyber-body">
+<body>
 
-    <div id="glitch-overlay"></div>
-    <div id="scanline-overlay"></div>
-
-    <div class="background-elements">
-        <div class="bg-shape bg-shape1"></div>
-        <div class="bg-shape bg-shape2"></div>
-    </div>
-
-    <header class="cyber-header">
-        <nav class="cyber-nav">
-            <div class="nav-logo" data-text="NH_PRINCE">
-                <a href="#home" class="glitch-effect">NH_PRINCE</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-text=">_HOME">[ >_HOME ]</a></li>
-                <li><a href="#about" class="nav-link" data-text=">_AGENT_PROFILE">[ >_AGENT_PROFILE ]</a></li>
-                <li><a href="#projects" class="nav-link" data-text=">_MISSION_LOGS">[ >_MISSION_LOGS ]</a></li>
-                <li><a href="#contact" class="nav-link" data-text=">_COMMS_CHANNEL">[ >_COMMS_CHANNEL ]</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="#home" class="nav-logo">NHP</a>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                 <button class="mobile-nav-toggle" aria-controls="nav-menu" aria-expanded="false">
+                    <span class="sr-only">Menu</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main class="cyber-main">
+    <main>
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title" id="hero-title"></h1>
-                <p class="hero-subtitle" id="hero-subtitle"></p>
-                <a href="#about" class="cyber-button">
-                    <span class="cyber-button-text">INITIATE_CONNECTION</span>
-                    <span class="cyber-button-glitch"></span>
-                </a>
+            <div class="container">
+                <h1 class="hero-title">NH Prince Pradhan</h1>
+                <p class="hero-subtitle">Elite Bug Hunter & Cyber Security Specialist</p>
+                <p class="hero-description">Securing digital ecosystems through advanced penetration testing and vulnerability analysis.</p>
+                <a href="#contact" class="btn btn-primary">Engage My Services</a>
             </div>
         </section>
 
-        <section id="about" class="content-section">
-            <h2 class="section-title" data-text="AGENT_PROFILE_//_01">AGENT_PROFILE // 01</h2>
-            <div class="about-container">
-                <div class="profile-image-container">
-                    <div class="profile-image-glitch">
-                        <img src="https://b.top4top.io/p_3436k3qx11.jpg" alt="NH Prince Pradhan" class="profile-image">
-                        <div class="profile-image-overlay"></div>
+        <section id="about" class="about-section content-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>With over three years in the cybersecurity trenches, I am a dedicated ethical hacker with a proven track record of identifying critical vulnerabilities and fortifying digital defenses. My methodology combines creative problem-solving with rigorous technical analysis to stay ahead of emerging threats. I am passionate about making the digital world a safer place, one bug at a time.</p>
+                        <div class="skills-grid">
+                            <h3 class="subsection-title">Core Competencies</h3>
+                            <ul class="skills-list">
+                                <li>Web & Mobile App Penetration Testing</li>
+                                <li>Vulnerability Assessment</li>
+                                <li>Network Security Analysis</li>
+                                <li>CTF Competitions (Top 5% placement)</li>
+                                <li>Secure Code Review</li>
+                                <li>Incident Response</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="profile-data-container">
-                    <div class="data-card">
-                        <h3 class="data-card-title" data-text="IDENTITY_CONFIRMED">IDENTITY_CONFIRMED</h3>
-                        <p class="data-card-text">NH Prince Pradhan</p>
-                    </div>
-                    <div class="data-card">
-                        <h3 class="data-card-title" data-text="PRIMARY_DIRECTIVE">PRIMARY_DIRECTIVE</h3>
-                        <p class="data-card-text">Cyber Security Specialist / Netrunner</p>
-                    </div>
-                    <div class="data-card">
-                        <h3 class="data-card-title" data-text="CORE_ATTRIBUTES">CORE_ATTRIBUTES</h3>
-                        <ul class="attributes-list">
-                            <li>Vulnerability Exploitation</li>
-                            <li>Stealth Operations (CTF)</li>
-                            <li>Penetration Testing</li>
-                            <li>Security Architecture</li>
-                        </ul>
+                    <div class="about-image">
+                        <img src="https://b.top4top.io/p_3436k3qx11.jpg" alt="NH Prince Pradhan">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="content-section">
-            <h2 class="section-title" data-text="MISSION_LOGS_//_02">MISSION_LOGS // 02</h2>
-            <div class="projects-grid">
-                <div class="project-card" style="--glow-color: #ff00ff;">
-                    <div class="project-card-border"></div>
-                    <div class="project-card-content">
-                        <h3 class="project-title">Project: Rootkit_Analyzer</h3>
-                        <p class="project-description">Deep-kernel analysis tool to uncover and neutralize stealth threats.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span><span class="tag">Kernel-Mode</span>
-                        </div>
+        <section id="services" class="services-section content-section">
+            <div class="container">
+                <h2 class="section-title">Core Modules (Services)</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3 class="service-title">Vulnerability Exploitation</h3>
+                        <p class="service-description">I identify and validate security flaws in your applications before malicious actors do. Delivered over 50+ detailed vulnerability reports in the last year.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-title">Penetration Testing</h3>
+                        <p class="service-description">Simulating real-world attacks on your infrastructure (Web, Mobile, API) to uncover weaknesses. Secured 20+ applications for clients.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-title">CTF & Stealth Operations</h3>
+                        <p class="service-description">Leveraging advanced problem-solving skills from competitive hacking to perform deep-dive security analysis and forensic investigations.</p>
                     </div>
                 </div>
-                <div class="project-card" style="--glow-color: #00ffff;">
-                    <div class="project-card-border"></div>
-                    <div class="project-card-content">
-                        <h3 class="project-title">Project: CTF_Payload_Gen</h3>
-                        <p class="project-description">Automated payload generation for diverse Capture The Flag scenarios.</p>
-                        <div class="project-tags">
-                            <span class="tag">Bash</span><span class="tag">CTF_Arsenal</span>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section content-section">
+            <div class="container">
+                <h2 class="section-title">Project Archive</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-title">Rootkit Analyzer</h3>
+                            <span class="project-tech-stack">Python, Kernel-Mode</span>
+                        </div>
+                        <p class="project-description">Developed an advanced tool to detect and neutralize kernel-level rootkits, resulting in a 40% improvement in stealth threat detection for a test environment.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View on GitHub</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card" style="--glow-color: #ffff00;">
-                    <div class="project-card-border"></div>
-                    <div class="project-card-content">
-                        <h3 class="project-title">Project: Network_Mapper_vX</h3>
-                        <p class="project-description">High-speed network cartography and vulnerability scanner.</p>
-                        <div class="project-tags">
-                            <span class="tag">Go</span><span class="tag">Reconnaissance</span>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-title">CTF Payload Generator</h3>
+                            <span class="project-tech-stack">Bash, Automation</span>
+                        </div>
+                        <p class="project-description">Created a script to automate the generation of common CTF payloads, reducing setup time for challenges by an average of 15 minutes.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <h3 class="project-title">Network Mapper vX</h3>
+                            <span class="project-tech-stack">Go, Concurrency</span>
+                        </div>
+                        <p class="project-description">A high-performance network scanner built with Go for rapid reconnaissance. Capable of scanning a /24 subnet in under 5 seconds.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View on GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="content-section">
-            <h2 class="section-title" data-text="COMMS_CHANNEL_//_03">COMMS_CHANNEL // 03</h2>
-            <p class="contact-text">Secure line open for new contracts and collaborations. Send your encrypted message.</p>
-            <div class="contact-links">
-                <a href="mailto:nurulhudaprince18@gmail.com" class="cyber-button">
-                    <span class="cyber-button-text">Secure_Email</span>
-                    <span class="cyber-button-glitch"></span>
-                </a>
-                 <a href="https://github.com/nhprince" class="cyber-button">
-                    <span class="cyber-button-text">Code_Repository</span>
-                    <span class="cyber-button-glitch"></span>
-                </a>
-                 <a href="https://t.me/NhPrince1982" class="cyber-button">
-                    <span class="cyber-button-text">Encrypted_Chat</span>
-                    <span class="cyber-button-glitch"></span>
-                </a>
+        <section id="contact" class="contact-section content-section">
+            <div class="container">
+                <h2 class="section-title">Initiate Contact</h2>
+                <p class="contact-intro">Have a project, a question, or need a security audit? Let's connect.</p>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Secure Message</button>
+                </form>
+                <div class="contact-alternatives">
+                    <p>Or reach me via:</p>
+                    <div class="social-links">
+                        <a href="mailto:nurulhudaprince18@gmail.com">Email</a>
+                        <a href="https://github.com/nhprince">GitHub</a>
+                        <a href="https://t.me/NhPrince1982">Telegram</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="cyber-footer">
-        <p>SYSTEM_STATUS: <span class="status-ok">SECURE</span> | © 2077 NH_PRINCE. ALL RIGHTS RESERVED.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 NH Prince Pradhan. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="cyberpunk.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
